@@ -39,6 +39,7 @@ pdfjsLib.getDocument("GDP.pdf").promise.then((pdf) => {
     childBox.style.top = "50px";
     parentBox.appendChild(childBox);
 
+    // Function to handle drag movement of bounding boxes
     const dragMoveListener = (event) => {
       const target = event.target;
       const x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
@@ -50,6 +51,7 @@ pdfjsLib.getDocument("GDP.pdf").promise.then((pdf) => {
       target.setAttribute("data-y", y);
     };
 
+    // Function to handle resize movement of bounding boxes
     const resizeMoveListener = (event) => {
       const target = event.target;
       let x = parseFloat(target.getAttribute("data-x")) || 0;
